@@ -1,0 +1,16 @@
+﻿SET IDENTITY_INSERT [dbo].[City] ON
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (1, N'Hyderabad', 1)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (2, N'Warangal', 1)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (3, N'Vijayawada', 2)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (4, N'Guntur', 2)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (5, N'Chennai', 3)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (6, N'Rameswaram', 3)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (7, N'Tiruvananthapuram', 4)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (8, N'Thrissur', 4)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (9, N'Bengaluru', 5)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (10, N'Mysore', 5)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (11, N'Nellore', 2)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (12, N'Mumbai', 6)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (13, N'New Delhi', 7)
+INSERT INTO [dbo].[City] ([ID], [Name], [StateID]) VALUES (15, N'Global', 8)
+SET IDENTITY_INSERT [dbo].[City] OFF

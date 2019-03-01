@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="045d87e14c134a7e9662747fd1c46ddc" Name="Diagram1">
+        <EntityTypeShape EntityType="WEHelpdbModel.City" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.Contact" Width="1.5" PointX="3.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.Event" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.Institution" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.InstitutionsType" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.Scholorship" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.ScholorshipType" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEHelpdbModel.State" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="WEHelpdbModel.FK__City__StateID__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="WEHelpdbModel.FK__Event__CityID__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="WEHelpdbModel.FK__Institutio__City__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="WEHelpdbModel.FK__Instituti__Insti__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="WEHelpdbModel.FK__Institutio__Type__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="WEHelpdbModel.FK__Scholorsh__Level__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="WEHelpdbModel.FK__Scholorshi__Type__35BCFE0A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

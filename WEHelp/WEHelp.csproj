@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,34 +134,259 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="City.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ScholarshipController.cs" />
+    <Compile Include="Event.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Institution.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstitutionsType.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scholorship.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScholorshipType.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeHelpDbmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeHelpDbmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeHelpDbmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeHelpDbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeHelpDbmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeHelpDbmodel.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\WEHelpdb.mdf" />
+    <Content Include="App_Data\WEHelpdb_log.ldf">
+      <DependentUpon>WEHelpdb.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\breadcrumb.css" />
+    <Content Include="Content\flaticon.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themify-icons.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Fonts\flaticon.css" />
+    <Content Include="Fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="img\about.png" />
+    <Content Include="img\banner\2.png" />
+    <Content Include="img\banner\banner-2.jpg" />
+    <Content Include="img\banner\banner.jpg" />
+    <Content Include="img\banner\home-banner.jpg" />
+    <Content Include="img\banner\home-banner2.jpg" />
+    <Content Include="img\blog\add.jpg" />
+    <Content Include="img\blog\author.png" />
+    <Content Include="img\blog\c1.jpg" />
+    <Content Include="img\blog\c2.jpg" />
+    <Content Include="img\blog\c3.jpg" />
+    <Content Include="img\blog\c4.jpg" />
+    <Content Include="img\blog\c5.jpg" />
+    <Content Include="img\blog\c6.jpg" />
+    <Content Include="img\blog\cat-post\cat-post-1.jpg" />
+    <Content Include="img\blog\cat-post\cat-post-2.jpg" />
+    <Content Include="img\blog\cat-post\cat-post-3.jpg" />
+    <Content Include="img\blog\causes\causes-1.jpg" />
+    <Content Include="img\blog\causes\causes-2.jpg" />
+    <Content Include="img\blog\causes\causes-3.jpg" />
+    <Content Include="img\blog\feature-img1.jpg" />
+    <Content Include="img\blog\main-blog\blog1.jpg" />
+    <Content Include="img\blog\main-blog\blog2.jpg" />
+    <Content Include="img\blog\main-blog\blog3-1.png" />
+    <Content Include="img\blog\main-blog\blog3.jpg" />
+    <Content Include="img\blog\main-blog\blog4.png" />
+    <Content Include="img\blog\main-blog\m-blog-1.jpg" />
+    <Content Include="img\blog\main-blog\m-blog-2.jpg" />
+    <Content Include="img\blog\main-blog\m-blog-3.jpg" />
+    <Content Include="img\blog\main-blog\m-blog-4.jpg" />
+    <Content Include="img\blog\main-blog\m-blog-5.jpg" />
+    <Content Include="img\blog\next.jpg" />
+    <Content Include="img\blog\popular-post\blog1.png" />
+    <Content Include="img\blog\popular-post\post1.jpg" />
+    <Content Include="img\blog\popular-post\post2.jpg" />
+    <Content Include="img\blog\popular-post\post3.jpg" />
+    <Content Include="img\blog\popular-post\post4.jpg" />
+    <Content Include="img\blog\post-img1.jpg" />
+    <Content Include="img\blog\post-img2.jpg" />
+    <Content Include="img\blog\prev.jpg" />
+    <Content Include="img\courses\author1.png" />
+    <Content Include="img\courses\author2.png" />
+    <Content Include="img\courses\author3.png" />
+    <Content Include="img\courses\c1.jpg" />
+    <Content Include="img\courses\c2.jpg" />
+    <Content Include="img\courses\c3.jpg" />
+    <Content Include="img\courses\course-details.jpg" />
+    <Content Include="img\elements\a.jpg" />
+    <Content Include="img\elements\a2.jpg" />
+    <Content Include="img\elements\d.jpg" />
+    <Content Include="img\elements\disabled-check.png" />
+    <Content Include="img\elements\disabled-radio.png" />
+    <Content Include="img\elements\f1.jpg" />
+    <Content Include="img\elements\f2.jpg" />
+    <Content Include="img\elements\f3.jpg" />
+    <Content Include="img\elements\f4.jpg" />
+    <Content Include="img\elements\f5.jpg" />
+    <Content Include="img\elements\f6.jpg" />
+    <Content Include="img\elements\f7.jpg" />
+    <Content Include="img\elements\f8.jpg" />
+    <Content Include="img\elements\g1.jpg" />
+    <Content Include="img\elements\g2.jpg" />
+    <Content Include="img\elements\g3.jpg" />
+    <Content Include="img\elements\g4.jpg" />
+    <Content Include="img\elements\g5.jpg" />
+    <Content Include="img\elements\g6.jpg" />
+    <Content Include="img\elements\g7.jpg" />
+    <Content Include="img\elements\g8.jpg" />
+    <Content Include="img\elements\primary-check.png" />
+    <Content Include="img\elements\primary-radio.png" />
+    <Content Include="img\elements\success-check.png" />
+    <Content Include="img\elements\success-radio.png" />
+    <Content Include="img\elements\user1.png" />
+    <Content Include="img\elements\user2.png" />
+    <Content Include="img\event\e1.jpg" />
+    <Content Include="img\event\e2.jpg" />
+    <Content Include="img\event\event.jpg" />
+    <Content Include="img\event\event.png" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\features\f1.png" />
+    <Content Include="img\features\f2.png" />
+    <Content Include="img\features\f3.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo2.png" />
+    <Content Include="img\logo3.png" />
+    <Content Include="img\logo4.png" />
+    <Content Include="img\next.png" />
+    <Content Include="img\prev.png" />
+    <Content Include="img\testimonials\images.png" />
+    <Content Include="img\testimonials\t1.jpg" />
+    <Content Include="img\testimonials\t2.jpg" />
+    <Content Include="img\trainer\t1.jpg" />
+    <Content Include="img\trainer\t2.jpg" />
+    <Content Include="img\trainer\t3.jpg" />
+    <Content Include="img\trainer\t4.jpg" />
+    <Content Include="img\banner\_DS_Store" />
+    <Content Include="img\courses\_DS_Store" />
+    <Content Include="img\elements\_DS_Store" />
+    <Content Include="img\event\_DS_Store" />
+    <Content Include="img\features\_DS_Store" />
+    <Content Include="img\testimonials\_DS_Store" />
+    <Content Include="img\trainer\_DS_Store" />
+    <Content Include="img\_DS_Store" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\contact.js" />
+    <Content Include="Scripts\gmaps.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery.ajaxchimp.min.js" />
+    <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\mail-script.js" />
+    <Content Include="Scripts\owl-carousel-thumb.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\stellar.js" />
+    <Content Include="Scripts\theme.js" />
+    <Content Include="vendors\bootstrap-datepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="vendors\bootstrap-datepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="vendors\bootstrap-datepicker\bootstrap-select.css" />
+    <Content Include="vendors\bootstrap-datepicker\bootstrap-select.js" />
+    <Content Include="vendors\flipclock\timer.js" />
+    <Content Include="vendors\jquery-ui\jquery-ui.css" />
+    <Content Include="vendors\jquery-ui\jquery-ui.js" />
+    <Content Include="vendors\nice-select\css\nice-select.css" />
+    <Content Include="vendors\nice-select\css\style.css" />
+    <Content Include="vendors\nice-select\js\jquery.nice-select.js" />
+    <Content Include="vendors\nice-select\js\jquery.nice-select.min.js" />
+    <Content Include="vendors\owl-carousel\assets\ajax-loader.gif" />
+    <Content Include="vendors\owl-carousel\assets\animated.css" />
+    <Content Include="vendors\owl-carousel\assets\owl.carousel.css" />
+    <Content Include="vendors\owl-carousel\owl.carousel.min.css" />
+    <Content Include="vendors\owl-carousel\owl.carousel.min.js" />
+    <Content Include="WE Help - doc\css\font-awesome.min.css" />
+    <Content Include="WE Help - doc\css\main.css" />
+    <Content Include="WE Help - doc\css\normalize.min.css" />
+    <Content Include="WE Help - doc\fonts\fontawesome-webfont.svg" />
+    <Content Include="WE Help - doc\img\logo.png" />
+    <Content Include="WE Help - doc\index.html" />
+    <Content Include="WE Help - doc\js\custom.js" />
+    <Content Include="WE Help - doc\js\jquery-1.11.0.min.js" />
+    <Content Include="WE Help - doc\js\jquery.nav.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shAutoloader.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushAS3.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushBash.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushCpp.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushCSharp.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushCss.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushDelphi.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushDiff.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushErlang.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushGroovy.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushJava.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushJScript.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushPerl.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushPhp.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushPlain.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushPython.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushRuby.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushSass.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushScala.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushSql.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushVb.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shBrushXml.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shCore.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\scripts\shLegacy.js" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCore.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreDefault.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreDjango.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreEclipse.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreEmacs.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreMDUltra.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreMidnight.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shCoreRDark.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeDefault.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeDjango.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeEclipse.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeEmacs.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeMDUltra.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeMidnight.css" />
+    <Content Include="WE Help - doc\syntax-highlighter\styles\shThemeRDark.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -168,23 +401,82 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Scholarship\ScholarshipDetails.cshtml" />
+    <Content Include="Views\Home\Scholarships.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Courses\Courses.cshtml" />
+    <EmbeddedResource Include="Views\Course\CourseDetails.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="WeHelpDbmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WeHelpDbmodel.Context.cs</LastGenOutput>
+      <DependentUpon>WeHelpDbmodel.edmx</DependentUpon>
+    </Content>
+    <Content Include="WeHelpDbmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeHelpDbmodel.edmx</DependentUpon>
+      <LastGenOutput>WeHelpDbmodel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Fonts\Flaticon.eot" />
+    <Content Include="Fonts\Flaticon.ttf" />
+    <Content Include="Fonts\Flaticon.woff" />
+    <Content Include="Fonts\Flaticon.woff2" />
+    <Content Include="Fonts\themify.eot" />
+    <Content Include="Fonts\themify.ttf" />
+    <Content Include="Fonts\themify.woff" />
+    <Content Include="Fonts\_DS_Store" />
+    <Content Include="Content\style.css.map" />
+    <Content Include="Content\_DS_Store" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\_banner.scss" />
+    <Content Include="scss\_blog.scss" />
+    <Content Include="scss\_button.scss" />
+    <Content Include="scss\_contact.scss" />
+    <Content Include="scss\_elements.scss" />
+    <Content Include="scss\_footer.scss" />
+    <Content Include="scss\_header.scss" />
+    <Content Include="scss\_home.scss" />
+    <Content Include="scss\_mixins.scss" />
+    <Content Include="scss\_predefine.scss" />
+    <Content Include="scss\_reset.scss" />
+    <Content Include="scss\_responsive.scss" />
+    <Content Include="scss\_variables.scss" />
+    <Content Include="vendors\_DS_Store" />
+    <Content Include="WE Help - doc\css\_DS_Store" />
+    <Content Include="WE Help - doc\fonts\fontawesome-webfont.eot" />
+    <Content Include="WE Help - doc\fonts\fontawesome-webfont.ttf" />
+    <Content Include="WE Help - doc\fonts\fontawesome-webfont.woff" />
+    <Content Include="WE Help - doc\fonts\FontAwesome.otf" />
+    <Content Include="WE Help - doc\fonts\_DS_Store" />
+    <Content Include="WE Help - doc\js\_DS_Store" />
+    <Content Include="WE Help - doc\syntax-highlighter\_DS_Store" />
+    <Content Include="WE Help - doc\_DS_Store" />
+    <Content Include="WE Help - doc\_DS_Store%281%29" />
+    <Content Include="Views\Blog\SingleBlog.cshtml" />
+    <Content Include="Views\Event\SingleEvent.cshtml" />
+    <EntityDeploy Include="WeHelpDbmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WeHelpDbmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="WeHelpDbmodel.edmx.diagram">
+      <DependentUpon>WeHelpDbmodel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Course\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
