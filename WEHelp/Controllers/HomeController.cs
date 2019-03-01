@@ -25,7 +25,6 @@ namespace WEHelp.Controllers
         {
             return View();
         }
-
         public ActionResult Login()
         {
             return View();
@@ -33,8 +32,15 @@ namespace WEHelp.Controllers
 
         public ActionResult Scholarships()
         {
-
             return View();
         }       
+        public ActionResult SingleEvent()
+        {
+            return View();
+        }
+        public ActionResult ViewAll()
+        {
+            return View();
+        }
     }
 }

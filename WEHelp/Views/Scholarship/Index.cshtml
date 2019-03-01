@@ -10,16 +10,17 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="~/img/favicon.png" type="image/png" />
-    <title>WE Help Education</title>
+    <title>Schemes and Scholorships</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
+    <link href="~/vendors/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/vendors/css/flaticon.css" rel="stylesheet" />
+    <link href="~/vendors/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/vendors/nice-select/css/nice-select.css" rel="stylesheet" />
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="~/vendors/css/style.css" rel="stylesheet" />
 </head>
+
 <body>
     <!--================ Start Header Menu Area =================-->
     <header class="header_area white-header">
@@ -38,10 +39,11 @@
                     </form>
                 </div>
             </div>
+
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand" href="index.cshtml">
+                    <a class="navbar-brand" href="Index.cshtml">
                         <img class="logo-2" src="~/img/logo2.png" alt="" />
                     </a>
                     <button class="navbar-toggler"
@@ -59,25 +61,25 @@
                          id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item ">
-                                <a class="nav-link" href="index.cshtml">Home</a>
+                                <a class="nav-link" href="Index.cshtml">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Courses.cshtml">Education</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="courses.cshtml">Education</a>
+                                <a class="nav-link" href="Scholarships.cshtml">Schemes & Scholarships</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="scholarships.cshtml">Schemes & Scholarships</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="blog.cshtml">News</a>
+                                <a class="nav-link" href="Blog.cshtml">News</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="events.cshtml">Events</a>
+                                <a class="nav-link" href="Events.cshtml">Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.cshtml">Contact</a>
+                                <a class="nav-link" href="Contact.cshtml">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login.cshtml">Sign-in</a>
+                                <a class="nav-link" href="Login.cshtml">Sign-in</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link search" id="search">
@@ -99,10 +101,10 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="banner_content text-center">
-                            <h2>Courses</h2>
+                            <h2>Schemes</h2>
                             <div class="page_link">
-                                <a href="index.cshtml">Home</a>
-                                <a href="courses.cshtml">Courses</a>
+                                <a href="Index.cshtml">Home</a>
+                                <a href="Courses.cshtml">schemes</a>
                             </div>
                         </div>
                     </div>
@@ -123,12 +125,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+
+                <div class="col-lg-6">
                     <div class="contact_info">
                         <div class="info_item">
                             <div class="form-group">
                                 <select class="form-control" id="sel1">
-                                    <option selected="true" disabled>-select education level-</option>
+                                    <option selected="true" disabled>-select institution-</option>
                                     <option>PG</option>
                                     <option>UG</option>
                                     <option>Intermediate</option>
@@ -140,38 +143,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
-                    <div class="contact_info">
-                        <div class="info_item">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option selected="true" disabled>-select state-</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="contact_info">
-                        <div class="info_item">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option selected="true" disabled>-select city-</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <div class="contact_info">
                         <div class="info_item">
                             <div class="form-group">
@@ -191,6 +164,37 @@
         <div class="row">
             <!-- single course -->
             <div class="col-lg-12">
+                @for (int i = 0; i < ViewBag.Institutions.Count; i++)
+                {
+                    Institution institution = ViewBag.Institutions[i];
+                    <div class="single_course">
+                        <div class="course_head">
+                            <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
+                        </div>
+                        <div class="course_content">
+                            <span class="tag mb-4 d-inline-block">@institution.InstitutionType.Value</span>
+                            <h4 class="mb-3">
+                                <a href="/course/view/@institution.ID">@institution.Name</a>
+                            </h4>
+                            <p>
+                                @institution.Descriptions
+                            </p>
+                            <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+
+                                <div class="mt-lg-0 mt-3">
+                                    <span class="meta_info mr-4">
+                                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                                    </span>
+                                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                }
+                
+                <!--
 
                 <div class="single_course">
                     <div class="course_head">
@@ -199,10 +203,10 @@
                     <div class="course_content">
                         <span class="tag mb-4 d-inline-block">UG</span>
                         <h4 class="mb-3">
-                            <a href="course-details.cshtml">Computer Engineering</a>
+                            <a href="scholarship-details.cshtml">Computer Engineering</a>
                         </h4>
                         <p>
-                            *------------------------*
+                            *----------------*
                         </p>
                         <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
@@ -215,7 +219,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="single_course">
                     <div class="course_head">
                         <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
@@ -223,10 +229,10 @@
                     <div class="course_content">
                         <span class="tag mb-4 d-inline-block">UG</span>
                         <h4 class="mb-3">
-                            <a href="course-details.cshtml">Computer Engineering</a>
+                            <a href="scholarship-details.cshtml">Computer Engineering</a>
                         </h4>
                         <p>
-                            *------------------------*
+                            *----------------*
                         </p>
                         <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
@@ -239,7 +245,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="single_course">
                     <div class="course_head">
                         <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
@@ -247,10 +255,10 @@
                     <div class="course_content">
                         <span class="tag mb-4 d-inline-block">UG</span>
                         <h4 class="mb-3">
-                            <a href="course-details.cshtml">Computer Engineering</a>
+                            <a href="scholarship-details.cshtml">Computer Engineering</a>
                         </h4>
                         <p>
-                            *------------------------*
+                            *----------------*
                         </p>
                         <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
@@ -263,7 +271,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="single_course">
                     <div class="course_head">
                         <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
@@ -271,10 +281,10 @@
                     <div class="course_content">
                         <span class="tag mb-4 d-inline-block">UG</span>
                         <h4 class="mb-3">
-                            <a href="course-details.cshtml">Computer Engineering</a>
+                            <a href="scholarship-details.cshtml">Computer Engineering</a>
                         </h4>
                         <p>
-                            *------------------------*
+                            *----------------*
                         </p>
                         <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
@@ -287,7 +297,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="single_course">
                     <div class="course_head">
                         <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
@@ -295,10 +307,10 @@
                     <div class="course_content">
                         <span class="tag mb-4 d-inline-block">UG</span>
                         <h4 class="mb-3">
-                            <a href="course-details.cshtml">Computer Engineering</a>
+                            <a href="scholarship-details.cshtml">Computer Engineering</a>
                         </h4>
                         <p>
-                            *------------------------*
+                            *----------------*
                         </p>
                         <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
@@ -311,31 +323,7 @@
                         </div>
                     </div>
                 </div>
-                <br>
-                <div class="single_course">
-                    <div class="course_head">
-                        <img class="img-fluid" src="~/img/courses/c3.jpg"  alt="" />
-                    </div>
-                    <div class="course_content">
-                        <span class="tag mb-4 d-inline-block">UG</span>
-                        <h4 class="mb-3">
-                            <a href="course-details.cshtml">Computer Engineering</a>
-                        </h4>
-                        <p>
-                            *------------------------*
-                        </p>
-                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-
-                            <div class="mt-lg-0 mt-3">
-                                <span class="meta_info mr-4">
-                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                </span>
-                                <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                -->
             </div>
         </div>
     </div>
@@ -357,4 +345,3 @@
     <script src="js/theme.js"></script>
 </body>
 </html>
-

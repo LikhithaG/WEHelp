@@ -8,6 +8,19 @@ namespace WEHelp.Controllers
 {
     public class EventController : Controller
     {
+        WEHelpdbEntities _entity;
+
+        public EventController()
+        {
+            _entity = new WEHelpdbEntities();
+        }
+
+        // GET: Course
+        public ActionResult Index()
+        {
+            ViewBag.Events = _entity.Events.ToList();
+            return View();
+        }
         // GET: Event
         public ActionResult SingleEvent()
         {

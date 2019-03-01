@@ -189,19 +189,19 @@
     <Content Include="App_Data\WEHelpdb_log.ldf">
       <DependentUpon>WEHelpdb.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\breadcrumb.css" />
-    <Content Include="Content\flaticon.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\themify-icons.css" />
+    <Content Include="vendors\css\bootstrap-theme.css" />
+    <Content Include="vendors\css\bootstrap-theme.min.css" />
+    <Content Include="vendors\css\bootstrap.css" />
+    <Content Include="vendors\css\bootstrap.min.css" />
+    <Content Include="vendors\css\breadcrumb.css" />
+    <Content Include="vendors\css\flaticon.css" />
+    <Content Include="vendors\css\style.css" />
+    <Content Include="vendors\css\themify-icons.css" />
     <Content Include="favicon.ico" />
     <Content Include="Fonts\flaticon.css" />
     <Content Include="Fonts\themify.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="vendors\css\Site.css" />
     <Content Include="img\about.png" />
     <Content Include="img\banner\2.png" />
     <Content Include="img\banner\banner-2.jpg" />
@@ -406,7 +406,6 @@
     <Content Include="Views\Scholarship\ScholarshipDetails.cshtml" />
     <Content Include="Views\Home\Scholarships.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Courses\Courses.cshtml" />
     <EmbeddedResource Include="Views\Course\CourseDetails.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="WeHelpDbmodel.Context.tt">
@@ -424,10 +423,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="vendors\css\bootstrap.min.css.map" />
+    <Content Include="vendors\css\bootstrap.css.map" />
+    <Content Include="vendors\css\bootstrap-theme.min.css.map" />
+    <Content Include="vendors\css\bootstrap-theme.css.map" />
     <Content Include="Fonts\Flaticon.eot" />
     <Content Include="Fonts\Flaticon.ttf" />
     <Content Include="Fonts\Flaticon.woff" />
@@ -436,8 +435,8 @@
     <Content Include="Fonts\themify.ttf" />
     <Content Include="Fonts\themify.woff" />
     <Content Include="Fonts\_DS_Store" />
-    <Content Include="Content\style.css.map" />
-    <Content Include="Content\_DS_Store" />
+    <Content Include="vendors\css\style.css.map" />
+    <Content Include="vendors\css\_DS_Store" />
     <None Include="packages.config" />
     <Content Include="scss\style.scss" />
     <Content Include="scss\_banner.scss" />
@@ -474,6 +473,12 @@
       <DependentUpon>WeHelpDbmodel.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Home\SingleEvent.cshtml" />
+    <Content Include="Views\Home\ViewAll.cshtml" />
+    <Content Include="Views\Scholarship\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Home\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
