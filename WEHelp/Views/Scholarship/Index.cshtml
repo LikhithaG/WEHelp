@@ -25,25 +25,11 @@
     <!--================ Start Header Menu Area =================-->
     <header class="header_area white-header">
         <div class="main_menu">
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="" action="">
-                        <input type="text"
-                               class="form-control"
-                               id="search_input"
-                               placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="ti-close"
-                              id="close_search"
-                              title="Close Search"></span>
-                    </form>
-                </div>
-            </div>
-
+          
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand" href="Index.cshtml">
+                    <a class="navbar-brand" href="/Home/Index">
                         <img class="logo-2" src="~/img/logo2.png" alt="" />
                     </a>
                     <button class="navbar-toggler"
@@ -61,31 +47,27 @@
                          id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item ">
-                                <a class="nav-link" href="Index.cshtml">Home</a>
+                                <a class="nav-link" href="/Home/Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Courses.cshtml">Education</a>
+                                <a class="nav-link" href="/Course/Index/">Education</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="Scholarships.cshtml">Schemes & Scholarships</a>
+                                <a class="nav-link" href="/Scholarship/Index">Schemes & Scholarships</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Blog.cshtml">News</a>
+                                <a class="nav-link" href="/Home/Blog">News</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="Events.cshtml">Events</a>
+                                <a class="nav-link" href="/Event/Index">Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Contact.cshtml">Contact</a>
+                                <a class="nav-link" href="/Home/Contact">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Login.cshtml">Sign-in</a>
+                                <a class="nav-link" href="/Home/Login">Sign-in</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link search" id="search">
-                                    <i class="ti-search"></i>
-                                </a>
-                            </li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -103,8 +85,8 @@
                         <div class="banner_content text-center">
                             <h2>Schemes</h2>
                             <div class="page_link">
-                                <a href="Index.cshtml">Home</a>
-                                <a href="Courses.cshtml">schemes</a>
+                                <a href="/Home/Index">Home</a>
+                                <a href="/Scholarship/Index">schemes</a>
                             </div>
                         </div>
                     </div>
@@ -164,20 +146,20 @@
         <div class="row">
             <!-- single course -->
             <div class="col-lg-12">
-                @for (int i = 0; i < ViewBag.Institutions.Count; i++)
-                {
-                    Institution institution = ViewBag.Institutions[i];
+                @for (int i = 0; i < ViewBag.Scholorships.Count; i++)
+                    {
+                        Scholorship scholorship  = ViewBag.Scholorships[i];
                     <div class="single_course">
                         <div class="course_head">
                             <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
                         </div>
                         <div class="course_content">
-                            <span class="tag mb-4 d-inline-block">@institution.InstitutionType.Value</span>
+                            <span class="tag mb-4 d-inline-block">@scholorship.Type.Value</span>
                             <h4 class="mb-3">
-                                <a href="/course/view/@institution.ID">@institution.Name</a>
+                                <a href="/Scholarship/ScholarshipDetails/@scholorship.ID">@scholorship.Name</a>
                             </h4>
                             <p>
-                                @institution.Descriptions
+                                @scholorship.Description
                             </p>
                             <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
@@ -193,6 +175,7 @@
                     <br>
 
                 }
+             
                 
                 <!--
 

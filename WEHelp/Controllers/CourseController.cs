@@ -21,10 +21,10 @@ namespace WEHelp.Controllers
             ViewBag.Institutions = _entity.Institutions.ToList();
             return View();
         }
-
-        public ActionResult CourseDetails()
+        [Route("course/CourseDetails/{id}")]
+        public ActionResult CourseDetails(int id)
         {
-            
+            ViewBag.Institution = _entity.Institutions.Where(isnt => isnt.ID == id).ToArray()[0];
             return View();
         }
     }

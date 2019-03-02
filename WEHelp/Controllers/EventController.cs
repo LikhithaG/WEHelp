@@ -22,8 +22,10 @@ namespace WEHelp.Controllers
             return View();
         }
         // GET: Event
-        public ActionResult SingleEvent()
+        [Route("event/SingleEvent/{id}")]
+        public ActionResult SingleEvent(int id)
         {
+            ViewBag.Events = _entity.Events.Where(evnt => evnt.ID == id).ToArray()[0];
             return View();
         }
     }

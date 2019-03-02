@@ -18,12 +18,13 @@ namespace WEHelp.Controllers
         // GET: Scholarship
         public ActionResult Index()
         {
-            ViewBag.Scholarships = _entity.Scholorships.ToList();
+            ViewBag.Scholorships = _entity.Scholorships.ToList();
             return View();
         }
-        
-        public ActionResult ScholarshipDetails()
+        [Route("Scholarship/ScholarshipDetails/{id}")]
+        public ActionResult ScholarshipDetails(int id)
         {
+            ViewBag.Scholorships = _entity.Scholorships.Where(isnt => isnt.ID == id).ToArray()[0];
             return View();
         }
     }

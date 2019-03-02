@@ -12,11 +12,15 @@
     <link rel="icon" href="~/img/favicon.png" type="image/png" />
     <title>WE Help Events</title>
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="~/vendors/css/bootstrap.css" rel="stylesheet" />
     <link href="~/vendors/css/flaticon.css" rel="stylesheet" />
     <link href="~/vendors/css/themify-icons.css" rel="stylesheet" />
     <link href="~/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/vendors/nice-select/css/nice-select.css" rel="stylesheet" />
+
     <!-- main css -->
     <link href="~/vendors/css/style.css" rel="stylesheet" />
 </head>
@@ -25,25 +29,12 @@
     <!--================ Start Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu">
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="" action="">
-                        <input type="text"
-                               class="form-control"
-                               id="search_input"
-                               placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="ti-close"
-                              id="close_search"
-                              title="Close Search"></span>
-                    </form>
-                </div>
-            </div>
+            
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="Index.cshtml">
+                    <a class="navbar-brand logo_h" href="/Home/Index">
                         <img src="~/img/logo.png" alt="" />
                     </a>
                     <button class="navbar-toggler"
@@ -61,30 +52,25 @@
                          id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="Index.cshtml">Home</a>
+                                <a class="nav-link" href="/Home/Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Courses.cshtml">Education</a>
+                                <a class="nav-link" href="/Course/Index">Education</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Scholarships.cshtml">Schemes & Scholarships</a>
+                                <a class="nav-link" href="/Scholarship/Index">Schemes & Scholarships</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Blog.cshtml">News</a>
+                                <a class="nav-link" href="/Home/Blog">News</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="Events.cshtml">Events</a>
+                                <a class="nav-link" href="/Event/Index">Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Contact.cshtml">Contact</a>
+                                <a class="nav-link" href="/Home/Contact">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Login.cshtml">Sign-in</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link search" id="search">
-                                    <i class="ti-search"></i>
-                                </a>
+                                <a class="nav-link" href="/Home/Login">Sign-in</a>
                             </li>
                         </ul>
                     </div>
@@ -128,10 +114,12 @@
                                     <div class="blog_info text-right">
                                         
                                         <ul class="blog_meta list">
-                                            <li><a href="#">@events.StartDate.Value<i class="ti-calendar"></i></a></li>
-                                            <li><a href="#">@events.City.Name<i class="ti-eye"></i></a></li>
-                                            <li><a href="#">@events.LocationLink</a></li>
-                                            <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
+                                            <li><span class="glyphicon glyphicon-edit">Date: </span></li>
+                                            <li> <a href="#"> @events.StartDate.ToString().Substring(0, 9)</a></li>
+                                            <li><span class="glyphicon glyphicon-map-marker">Location: </span></li>
+                                            <li><a href="#">@events.City.Name</a></li>	
+                                            <li><span class="glyphicon glyphicon-pencil">Comment: </span></li>
+                                            <li><a href="#">06 Comments</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -139,13 +127,14 @@
                                     <div class="blog_post">
                                         <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
                                         <div class="blog_details">
-                                            <a href="SingleEvent.cshtml">
+                                            <a href="/Event/SingleEvent">
                                                 <h2>@events.Name</h2>
                                             </a>
                                             <p>
                                                 @events.Descriptions
+                                                <p><a href="@events.LocationLink">Location</a></p>
                                             </p>
-                                            <a href="SingleEvent.cshtml" class="blog_btn">View More</a>
+                                            <a href="/Event/SingleEvent/@events.ID" class="blog_btn">View More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -272,7 +261,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post1.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="single-event.cshtml">
+                                    <a href="/Event/SingleEvent">
                                         <h3>Space The Final Frontier</h3>
                                     </a>
                                     <p>02 Hours ago</p>
@@ -281,7 +270,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post2.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="single-event.cshtml">
+                                    <a href="/Event/SingleEvent">
                                         <h3>The Amazing Hubble</h3>
                                     </a>
                                     <p>02 Hours ago</p>
@@ -290,7 +279,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post3.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="single-event.cshtml">
+                                    <a href="/Event/SingleEvent">
                                         <h3>Astronomy Or Astrology</h3>
                                     </a>
                                     <p>03 Hours ago</p>
@@ -299,7 +288,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post4.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="single-event.cshtml">
+                                    <a href="/Event/SingleEvent">
                                         <h3>Asteroids telescope</h3>
                                     </a>
                                     <p>01 Hours ago</p>

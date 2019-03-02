@@ -24,28 +24,16 @@
     <!--================ Start Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu">
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="" action="">
-                        <input type="text"
-                               class="form-control"
-                               id="search_input"
-                               placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="ti-close"
-                              id="close_search"
-                              title="Close Search"></span>
-                    </form>
-                </div>
-            </div>
+           
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="Index.cshtml">
+                    <a class="navbar-brand logo_h" href="~/Home/Index">
 
                         <img src="~/img/logo.png" alt="" />
                     </a>
                     <button class="navbar-toggler"
+
                             type="button"
                             data-toggle="collapse"
                             data-target="#navbarSupportedContent"
@@ -59,31 +47,26 @@
                     <div class="collapse navbar-collapse offset"
                          id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="Index.cshtml">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Courses.cshtml">Education</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Scholarships.cshtml">Schemes & Scholarships</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="Blog.cshtml">News</a>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="~/Home/Index">Home</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="Event.cshtml">Events</a>
+                                <a class="nav-link" href="/course/index">Education</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Contact.cshtml">Contact</a>
+                                <a class="nav-link" href="~/Scholarship/Index">Schemes & Scholarships</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="~/Home/Blog">News</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="~/Event/Index">Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Login.cshtml">Sign-in</a>
+                                <a class="nav-link" href="~/Home/Contact">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link search" id="search">
-                                    <i class="ti-search"></i>
-                                </a>
+                                <a class="nav-link" href="~/Home/Login">Sign-in</a>
                             </li>
                         </ul>
                     </div>
@@ -135,11 +118,11 @@
                                 <div class="blog_post">
                                     <img src="~/img/blog/main-blog/blog1.jpg" alt="">
                                     <div class="blog_details">
-                                        <a href="SingleBlog.cshtml">
+                                        <a href="~/Blog/SingleBlog">
                                             <h2>Wearables: BELLABEAT</h2>
                                         </a>
                                         <p>For making smart jewelry that goes with everything you wear.</p>
-                                        <a href="SingleBlog.cshtml" class="blog_btn">View More</a>
+                                        <a href="~/Blog/SingleBlog" class="blog_btn">View More</a>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +144,7 @@
                                 <div class="blog_post">
                                     <img src="~/img/blog/main-blog/blog2.jpg" alt="">
                                     <div class="blog_details">
-                                        <a href="SingleBlog.cshtml">
+                                        <a href="~/Blog/SingleBlog">
                                             <h2>Suraksha app</h2>
                                         </a>
                                         <p>
@@ -169,7 +152,7 @@
                                             active police-controlled evidence-based approach to capturing the perpetrators
                                             of violence against women.
                                         </p>
-                                        <a href="SingleBlog.cshtml" class="blog_btn">View More</a>
+                                        <a href="~/Blog/SingleBlog" class="blog_btn">View More</a>
                                     </div>
                                 </div>
                             </div>
@@ -191,14 +174,14 @@
                                 <div class="blog_post">
                                     <img src="~/img/blog/main-blog/blog3.jpg" alt="">
                                     <div class="blog_details">
-                                        <a href="SingleBlog.cshtml">
+                                        <a href="~/Blog/SingleBlog">
                                             <h2>Safelet</h2>
                                         </a>
                                         <p>
                                             A safety bracelet designed to be stylish and aid in women’s safety is a
                                             device that’s quite popular in the US.
                                         </p>
-                                        <a href="SingleBlog.cshtml" class="blog_btn">View More</a>
+                                        <a href="~/Blog/SingleBlog" class="blog_btn">View More</a>
                                     </div>
                                 </div>
                             </div>
@@ -220,14 +203,14 @@
                                 <div class="blog_post">
                                     <img src="~/img/blog/main-blog/blog4.png" alt="">
                                     <div class="blog_details">
-                                        <a href="SingleBlog.cshtml">
+                                        <a href="~/Blog/SingleBlog">
                                             <h2>ROAR (Athena)</h2>
                                         </a>
                                         <p>
                                             ROAR for Good created its first product, Athena, to create a simple way for
                                             women to get help.
                                         </p>
-                                        <a href="SingleBlog.cshtml" class="blog_btn">View More</a>
+                                        <a href="~/Blog/SingleBlog" class="blog_btn">View More</a>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +234,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/blog1.png" alt="post"/>
                                 <div class="media-body">
-                                    <a href="SingleBlog.cshtml">
+                                    <a href="~/Blog/SingleBlog">
                                         <h3>Wearables: BELLABEAT</h3>
                                     </a>
                                     <p>02 Hours ago</p>
@@ -260,7 +243,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post2.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="BlogDetails.cshtml">
+                                    <a href="~/Blog/SingleBlog">
                                         <h3>The Amazing Hubble</h3>
                                     </a>
                                     <p>02 Hours ago</p>
@@ -269,7 +252,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post3.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="SingleBlog.cshtml">
+                                    <a href="~/Blog/SingleBlog">
                                         <h3>Astronomy Or Astrology</h3>
                                     </a>
                                     <p>03 Hours ago</p>
@@ -278,7 +261,7 @@
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post4.jpg" alt="post">
                                 <div class="media-body">
-                                    <a href="SingleBlog.cshtml">
+                                    <a href="~/Blog/SingleBlog">
                                         <h3>Asteroids telescope</h3>
                                     </a>
                                     <p>01 Hours ago</p>
