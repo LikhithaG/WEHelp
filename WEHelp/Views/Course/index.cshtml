@@ -12,6 +12,9 @@
     <link rel="icon" href="~/img/favicon.png" type="image/png" />
     <title>WE Help Education</title>
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="~/vendors/css/bootstrap.css" rel="stylesheet" />
     <link href="~/vendors/css/flaticon.css" rel="stylesheet" />
     <link href="~/vendors/css/themify-icons.css" rel="stylesheet" />
@@ -81,10 +84,10 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="banner_content text-center">
-                            <h2>Courses</h2>
+                            <h2>Institutions</h2>
                             <div class="page_link">
                                 <a href="/Home/Index">Home</a>
-                                <a href="/Course/Index">Courses</a>
+                                <a href="/Course/Index">Institutions</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +102,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h2 class="mb-3">All Courses</h2>
+                    <h2 class="mb-3">All Institutions</h2>
                 </div>
             </div>
         </div>
@@ -178,10 +181,10 @@
                     Institution institution = ViewBag.Institutions[i];
                     <div class="single_course">
                         <div class="course_head">
-                            <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
+                            <img class="img-fluid" src="~/img/courses/institute.jpg" alt="" />
                         </div>
                         <div class="course_content">
-                            <span class="tag mb-4 d-inline-block">@institution.InstitutionType.Value</span>
+                            <span class="tag mb-4 d-inline-block">@institution.ID</span>
                             <h4 class="mb-3">
                                 <a href="/course/CourseDetails/@institution.ID">@institution.Name</a>
                             </h4>
@@ -191,10 +194,8 @@
                             <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
                                 <div class="mt-lg-0 mt-3">
-                                    <span class="meta_info mr-4">
-                                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                    </span>
-                                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                                    <span class="glyphicon glyphicon-thumbs-up">25 </span>
+                                    <span class="glyphicon glyphicon-comment">35 </span>
                                 </div>
                             </div>
                         </div>

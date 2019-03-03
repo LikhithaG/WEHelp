@@ -27,15 +27,14 @@
 
 <body>
     <!--================ Start Header Menu Area =================-->
-    <header class="header_area">
+    <header class="header_area white-header">
         <div class="main_menu">
-            
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="/Home/Index">
-                        <img src="~/img/logo.png" alt="" />
+                    <a class="navbar-brand" href="/Home/Index">
+                        <img class="logo-2" src="~/img/logo2.png" alt="" />
                     </a>
                     <button class="navbar-toggler"
                             type="button"
@@ -80,18 +79,18 @@
     </header>
     <!--================ End Header Menu Area =================-->
     <!--================ Start Home Banner Area =================-->
-    <section class="home_banner_area">
-        <div class="banner_inner">
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
                         <div class="banner_content text-center">
-                            <p class="text-uppercase">
-                                events
-                            </p>
-                            <h2 class="text-uppercase mt-4 mb-5">
-                                Women Educational Help
-                            </h2>
+                            <h2>Events</h2>
+                            <div class="page_link">
+                                <a href="/Home/Index">Home</a>
+                                <a href="/Event/Index">Event</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -105,6 +104,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
+                        
 
                         @for (int i = 0; i < ViewBag.Events.Count; i++)
                         {
@@ -112,12 +112,12 @@
                             <article class="row blog_item">
                                 <div class="col-md-3">
                                     <div class="blog_info text-right">
-                                        
+
                                         <ul class="blog_meta list">
                                             <li><span class="glyphicon glyphicon-edit">Date: </span></li>
                                             <li> <a href="#"> @events.StartDate.ToString().Substring(0, 9)</a></li>
                                             <li><span class="glyphicon glyphicon-map-marker">Location: </span></li>
-                                            <li><a href="#">@events.City.Name</a></li>	
+                                            <li><a href="#">@events.City.Name</a></li>
                                             <li><span class="glyphicon glyphicon-pencil">Comment: </span></li>
                                             <li><a href="#">06 Comments</a></li>
                                         </ul>
@@ -125,124 +125,126 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div class="blog_post">
-                                        <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
+                                        <img src="~/img/blog/main-blog/events.jpg" alt="">
                                         <div class="blog_details">
                                             <a href="/Event/SingleEvent">
-                                                <h2>@events.Name</h2>
+                                                <h2>
+                                                    <a href="/event/SingleEvent/@events.ID">@events.Name</a>
+                                                </h2>
                                             </a>
                                             <p>
                                                 @events.Descriptions
-                                                <p><a href="@events.LocationLink">Location</a></p>
+                                            <p><a href="@events.LocationLink">Location</a></p>
                                             </p>
-                                            <a href="/Event/SingleEvent/@events.ID" class="blog_btn">View More</a>
+                                            <a href="/event/SingleEvent/@events.ID" class="blog_btn">View More</a>
                                         </div>
                                     </div>
                                 </div>
                             </article>
                         }
 
-                            <!--
-        <article class="row blog_item">
-            <div class="col-md-3">
-                <div class="blog_info text-right">
-                    <div class="post_tag">
-                        <a href="#">UG,</a>
-                        <a class="active" href="#">PG</a>
-                    </div>
-                    <ul class="blog_meta list">
-                        <li><a href="#">*author*<i class="ti-user"></i></a></li>
-                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
-                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
-                    </ul>
+                        <!--
+    <article class="row blog_item">
+        <div class="col-md-3">
+            <div class="blog_info text-right">
+                <div class="post_tag">
+                    <a href="#">UG,</a>
+                    <a class="active" href="#">PG</a>
+                </div>
+                <ul class="blog_meta list">
+                    <li><a href="#">*author*<i class="ti-user"></i></a></li>
+                    <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
+                    <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                    <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="blog_post">
+                <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
+                <div class="blog_details">
+                    <a href="single-event.cshtml">
+                        <h2>*news title*</h2>
+                    </a>
+                    <p>
+                        MCSE boot camps have its supporters and its detractors. Some people do not
+                        understand why you should have to spend money on boot camp when you can get
+                        the MCSE study materials yourself at a fraction.
+                    </p>
+                    <a href="single-event.cshtml" class="blog_btn">View More</a>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="blog_post">
-                    <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
-                    <div class="blog_details">
-                        <a href="single-event.cshtml">
-                            <h2>*news title*</h2>
-                        </a>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not
-                            understand why you should have to spend money on boot camp when you can get
-                            the MCSE study materials yourself at a fraction.
-                        </p>
-                        <a href="single-event.cshtml" class="blog_btn">View More</a>
-                    </div>
-                </div>
-            </div>
-        </article>
+        </div>
+    </article>
 
-        <article class="row blog_item">
-            <div class="col-md-3">
-                <div class="blog_info text-right">
-                    <div class="post_tag">
-                        <a href="#">UG,</a>
-                        <a class="active" href="#">PG</a>
-                    </div>
-                    <ul class="blog_meta list">
-                        <li><a href="#">*author*<i class="ti-user"></i></a></li>
-                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
-                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
-                    </ul>
+    <article class="row blog_item">
+        <div class="col-md-3">
+            <div class="blog_info text-right">
+                <div class="post_tag">
+                    <a href="#">UG,</a>
+                    <a class="active" href="#">PG</a>
+                </div>
+                <ul class="blog_meta list">
+                    <li><a href="#">*author*<i class="ti-user"></i></a></li>
+                    <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
+                    <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                    <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="blog_post">
+                <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
+                <div class="blog_details">
+                    <a href="single-event.cshtml">
+                        <h2>*news title*</h2>
+                    </a>
+                    <p>
+                        MCSE boot camps have its supporters and its detractors. Some people do not
+                        understand why you should have to spend money on boot camp when you can get
+                        the MCSE study materials yourself at a fraction.
+                    </p>
+                    <a href="single-event.cshtml" class="blog_btn">View More</a>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="blog_post">
-                    <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
-                    <div class="blog_details">
-                        <a href="single-event.cshtml">
-                            <h2>*news title*</h2>
-                        </a>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not
-                            understand why you should have to spend money on boot camp when you can get
-                            the MCSE study materials yourself at a fraction.
-                        </p>
-                        <a href="single-event.cshtml" class="blog_btn">View More</a>
-                    </div>
-                </div>
-            </div>
-        </article>
+        </div>
+    </article>
 
-        <article class="row blog_item">
-            <div class="col-md-3">
-                <div class="blog_info text-right">
-                    <div class="post_tag">
-                        <a href="#">UG,</a>
-                        <a class="active" href="#">PG</a>
-                    </div>
-                    <ul class="blog_meta list">
-                        <li><a href="#">*author*<i class="ti-user"></i></a></li>
-                        <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
-                        <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
-                        <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
-                    </ul>
+    <article class="row blog_item">
+        <div class="col-md-3">
+            <div class="blog_info text-right">
+                <div class="post_tag">
+                    <a href="#">UG,</a>
+                    <a class="active" href="#">PG</a>
+                </div>
+                <ul class="blog_meta list">
+                    <li><a href="#">*author*<i class="ti-user"></i></a></li>
+                    <li><a href="#">12 Dec, 2017<i class="ti-calendar"></i></a></li>
+                    <li><a href="#">1.2M Views<i class="ti-eye"></i></a></li>
+                    <li><a href="#">06 Comments<i class="ti-comment"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="blog_post">
+                <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
+                <div class="blog_details">
+                    <a href="single-event.cshtml">
+                        <h2>*news title*</h2>
+                    </a>
+                    <p>
+                        MCSE boot camps have its supporters and its detractors. Some people do not
+                        understand why you should have to spend money on boot camp when you can get
+                        the MCSE study materials yourself at a fraction.
+                    </p>
+                    <a href="single-event.cshtml" class="blog_btn">View More</a>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="blog_post">
-                    <img src="~/img/blog/main-blog/m-blog-1.jpg" alt="">
-                    <div class="blog_details">
-                        <a href="single-event.cshtml">
-                            <h2>*news title*</h2>
-                        </a>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not
-                            understand why you should have to spend money on boot camp when you can get
-                            the MCSE study materials yourself at a fraction.
-                        </p>
-                        <a href="single-event.cshtml" class="blog_btn">View More</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-        -->
+        </div>
+    </article>
+    -->
 
-                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
@@ -257,7 +259,7 @@
                         </aside>
 
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Popular Posts</h3>
+                            <h3 class="widget_title">Popular Events</h3>
                             <div class="media post_item">
                                 <img src="~/img/blog/popular-post/post1.jpg" alt="post">
                                 <div class="media-body">

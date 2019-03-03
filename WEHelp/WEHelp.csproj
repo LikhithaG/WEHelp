@@ -189,12 +189,22 @@
     <Content Include="App_Data\WEHelpdb_log.ldf">
       <DependentUpon>WEHelpdb.mdf</DependentUpon>
     </Content>
+    <Content Include="img\blog\banner4.jpg" />
+    <Content Include="img\blog\main-blog\blog2 - Copy.jpg" />
+    <Content Include="img\blog\main-blog\events.jpg" />
+    <Content Include="img\courses\institute.jpg" />
+    <Content Include="img\courses\KV.jpg" />
+    <Content Include="img\courses\Scholarship.jpg" />
+    <Content Include="img\event\banner4.jpg" />
+    <Content Include="img\event\download.jpg" />
     <Content Include="vendors\css\bootstrap-theme.css" />
     <Content Include="vendors\css\bootstrap-theme.min.css" />
     <Content Include="vendors\css\bootstrap.css" />
     <Content Include="vendors\css\bootstrap.min.css" />
     <Content Include="vendors\css\breadcrumb.css" />
     <Content Include="vendors\css\flaticon.css" />
+    <Content Include="vendors\css\home-banner.jpg" />
+    <Content Include="vendors\css\style - Copy.css" />
     <Content Include="vendors\css\style.css" />
     <Content Include="vendors\css\themify-icons.css" />
     <Content Include="favicon.ico" />
@@ -466,6 +476,9 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Home\Event.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
+    <Content Include="Views\Scholarship\Home.cshtml" />
+    <Content Include="Views\Home\Index1 - Copy.cshtml" />
+    <Content Include="Views\Event\SingleEvent1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

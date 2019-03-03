@@ -12,6 +12,9 @@
     <link rel="icon" href="~/img/favicon.png" type="image/png" />
     <title>Schemes and Scholorships</title>
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="~/vendors/css/bootstrap.css" rel="stylesheet" />
     <link href="~/vendors/css/flaticon.css" rel="stylesheet" />
     <link href="~/vendors/css/themify-icons.css" rel="stylesheet" />
@@ -151,10 +154,10 @@
                         Scholorship scholorship  = ViewBag.Scholorships[i];
                     <div class="single_course">
                         <div class="course_head">
-                            <img class="img-fluid" src="~/img/courses/c3.jpg" alt="" />
+                            <img class="img-fluid" src="~/img/courses/Scholarship.jpg" alt="" />
                         </div>
                         <div class="course_content">
-                            <span class="tag mb-4 d-inline-block">@scholorship.Type.Value</span>
+                            <span class="tag mb-4 d-inline-block">@scholorship.ID</span>
                             <h4 class="mb-3">
                                 <a href="/Scholarship/ScholarshipDetails/@scholorship.ID">@scholorship.Name</a>
                             </h4>
@@ -164,10 +167,8 @@
                             <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
 
                                 <div class="mt-lg-0 mt-3">
-                                    <span class="meta_info mr-4">
-                                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                    </span>
-                                    <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                                    <span class="glyphicon glyphicon-thumbs-up">10</span>
+                                    <span class="glyphicon glyphicon-comment">5</span>
                                 </div>
                             </div>
                         </div>

@@ -21,6 +21,10 @@ namespace WEHelp.Controllers
             ViewBag.Scholorships = _entity.Scholorships.ToList();
             return View();
         }
+        public ActionResult Home()
+        {
+            return View();
+        }
         [Route("Scholarship/ScholarshipDetails/{id}")]
         public ActionResult ScholarshipDetails(int id)
         {
